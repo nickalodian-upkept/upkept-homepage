@@ -43,7 +43,7 @@ export default function Home() {
     {/* Left Side: Headline & CTA */}
     <div className="text-left">
 <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
-  <span className="flex flex-wrap items-baseline gap-x-2">
+  <span className="inline-flex items-baseline gap-x-2 whitespace-nowrap">
     <span>Hey</span>
     <span className="relative w-[11ch] inline-block text-blue-600 font-bold">
       {cities.map((city, index) => (
