@@ -43,7 +43,7 @@ export default function Home() {
             <div className="text-left">
 <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
   Hey{' '}
-  <span className="inline-block relative align-baseline text-blue-600 w-[11ch] h-[1.2em]">
+  <span className="inline-block relative align-middle text-blue-600 w-[11ch] h-[1.2em]">
     {cities.map((city, index) => (
       <span
         key={city}
