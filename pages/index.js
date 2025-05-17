@@ -21,20 +21,30 @@ export default function Home() {
 
       <main className="bg-white min-h-screen px-6 sm:px-8 lg:px-12 py-10 text-gray-800 font-sans">
         {/* Header with Logo */}
-        <header className="flex justify-between items-center max-w-7xl mx-auto mb-16">
-          <a href="/" className="flex items-center space-x-2">
-            <img
-              src="/upkept-logo.svg"
-              alt="Upkept logo"
-              className="h-20 w-auto block"
-            />
-          </a>
-          <nav className="flex space-x-6 text-sm font-medium text-gray-600">
-            <a href="#" className="hover:text-blue-600">Plans</a>
-            <a href="#" className="hover:text-blue-600">How It Works</a>
-            <a href="#" className="text-blue-600 hover:text-blue-700">Sign Up</a>
-          </nav>
-        </header>
+  <header className="flex justify-between items-center max-w-7xl mx-auto mb-16 px-4 sm:px-6 lg:px-8">
+    {/* Logo */}
+    <a href="/" className="flex items-center space-x-2">
+      <img
+        src="/upkept-logo.svg"
+        alt="Upkept logo"
+        className="h-6 sm:h-8 w-auto"
+      />
+    </a>
+
+    {/* Navigation */}
+    <nav className="flex items-center space-x-4 text-sm font-medium text-gray-600">
+      <a href="#" className="hover:text-blue-600">Plans</a>
+      <a href="#" className="hover:text-blue-600">How It Works</a>
+      <span className="text-gray-300">|</span>
+      <a href="#" className="hover:text-blue-600">Login</a>
+      <a
+        href="#"
+        className="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm shadow-sm"
+      >
+        Sign Up
+      </a>
+    </nav>
+  </header>
 
 {/* Hero */}
 <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 mb-32">
