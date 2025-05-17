@@ -41,15 +41,16 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             {/* Left Side: Headline & CTA */}
             <div className="text-left">
-              <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
+<h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
   Hey{' '}
-  <span className="relative inline-block w-[10ch] text-blue-600">
+  <span className="relative inline-block w-[12ch] h-[1em] align-middle">
     {cities.map((city, index) => (
       <span
         key={city}
         className={`absolute left-0 top-0 transition-opacity duration-500 ${
           index === currentCity ? 'opacity-100' : 'opacity-0'
-        }`}
+        } text-blue-600`}
+        style={{ width: '100%' }}
       >
         {city}
       </span>
