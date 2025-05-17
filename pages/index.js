@@ -16,10 +16,9 @@ export default function Home() {
             <Image
               src="/logo-upkept.png"
               alt="upkept logo"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="h-8 w-auto max-w-[160px]"
+              width={160}
+              height={40}
+              className="h-8 w-auto"
               priority
             />
           </a>
