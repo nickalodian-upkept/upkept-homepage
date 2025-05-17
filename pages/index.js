@@ -88,20 +88,10 @@ export default function Home() {
 </section>
 
 {/* Pricing Plans */}
-<section className="relative mt-24 max-w-6xl mx-auto px-4">
-  {/* Background Illustration */}
-  <img
-    src="/pricing-illustration.png" // Make sure this path matches your file name
-    alt="Toolbox and ladder illustration"
-    className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] opacity-90 pointer-events-none z-0"
-    aria-hidden="true"
-  />
+<section className="mt-24 max-w-6xl mx-auto px-4 relative">
+  <h3 className="text-3xl font-bold text-center mb-12">Choose Your Plan</h3>
 
-  {/* Section Title */}
-  <h3 className="text-3xl font-bold text-center mb-12 relative z-10">Choose Your Plan</h3>
-
-  {/* Pricing Cards */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-10 relative">
     {/* Monthly Plan */}
     <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between">
       <div>
@@ -167,6 +157,15 @@ export default function Home() {
         Get Started
       </button>
     </div>
+  </div>
+
+  {/* Decorative Illustration */}
+  <div className="relative mt-[-30px] z-0 flex justify-center">
+    <img
+      src="/pricing-decor.png"
+      alt="Decorative toolbox and ladder"
+      className="w-full max-w-3xl object-contain pointer-events-none select-none"
+    />
   </div>
 </section>
 
