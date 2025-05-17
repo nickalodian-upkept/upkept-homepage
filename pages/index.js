@@ -13,15 +13,12 @@ export default function Home() {
         {/* Header with Logo */}
         <header className="flex justify-between items-center max-w-7xl mx-auto mb-16">
           <a href="/" className="flex items-center space-x-2">
-            <Image
-              src="/logo-upkept-tight.png"
-              alt="Upkept logo"
-              width={160}
-              height={40}
-              className="h-8 w-auto"
-              priority
-            />
-          </a>
+  <img
+    src="/logo-upkept.svg"
+    alt="Upkept logo"
+    className="h-8 w-auto"
+  />
+</a>
           <nav className="flex space-x-6 text-sm font-medium text-gray-600">
             <a href="#" className="hover:text-blue-600">Plans</a>
             <a href="#" className="hover:text-blue-600">How It Works</a>
