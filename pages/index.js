@@ -43,22 +43,13 @@ export default function Home() {
     {/* Left Side: Headline & CTA */}
     <div className="text-left">
 <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
-  <span className="inline-flex items-baseline gap-x-2 whitespace-nowrap">
-    <span>Hey</span>
-    <span className="relative w-[11ch] inline-block text-blue-600 font-bold">
-      {cities.map((city, index) => (
-        <span
-          key={city}
-          className={`absolute inset-0 transition-opacity duration-500 ${
-            index === currentCity ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {city}
-        </span>
-      ))}
+  <span className="block sm:inline">
+    Hey{' '}
+    <span className="inline-block text-blue-600 font-bold min-w-[9ch] align-baseline transition-all duration-500">
+      {cities[currentCity]}
     </span>
   </span>
-  <br />
+  <br className="sm:hidden" />
   time to get proactive with your home upkeep
 </h2>
       <p className="text-lg text-gray-500 mb-8 max-w-xl">
