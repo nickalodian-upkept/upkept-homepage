@@ -25,18 +25,32 @@ export default function Home() {
           </nav>
         </header>
 
-        {/* Hero */}
-        <section className="text-center max-w-3xl mx-auto mb-24">
-          <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
-            Hey Ottawa—time to get proactive with your home upkeep
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Our subscription keeps your home safe and maintained with thorough, scheduled visits.
-          </p>
-          <button className="bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
-            View Plans
-          </button>
-        </section>
+        {/* Hero Section */}
+<section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-24">
+  <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+    {/* Left Side: Headline & CTA */}
+    <div className="text-left">
+      <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
+        Hey Ottawa—time to get proactive with your home upkeep
+      </h2>
+      <p className="text-lg text-gray-600 mb-6">
+        Our subscription keeps your home safe and maintained with thorough, scheduled visits.
+      </p>
+      <button className="bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+        View Plans
+      </button>
+    </div>
+
+    {/* Right Side: Image */}
+    <div className="flex justify-center md:justify-end">
+      <img
+        src="/hero-house.png"
+        alt="Illustration of a cozy home with flower and grass"
+        className="w-64 sm:w-80 md:w-96"
+      />
+    </div>
+  </div>
+</section>
 
         {/* Pricing Plans */}
         <section className="mt-24 max-w-6xl mx-auto px-4">
