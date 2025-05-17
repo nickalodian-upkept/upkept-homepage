@@ -123,25 +123,8 @@ export default function Home() {
       </button>
     </div>
 
-            {/* Quarterly Plan */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between">
-              <div>
-                <h4 className="text-xl font-semibold mb-2">Quarterly</h4>
-                <p className="text-3xl font-bold mb-6">
-                  $149<span className="text-base font-medium">/quarter</span>
-                </p>
-                <ul className="space-y-3 text-gray-600 text-sm">
-                  <li>✅ Everything in Standard</li>
-                  <li>✅ Priority scheduling</li>
-                  <li>✅ Direct message access</li>
-                </ul>
-              </div>
-              <button className="mt-8 w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">
-                Get Started
-              </button>
-            </div>
-          </div>
-        </section>
+  </div>
+</section>
 
         {/* How It Works */}
         <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
