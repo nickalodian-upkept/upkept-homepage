@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Tailored to Your Life Stage */}
+        {/* Tailored to Life Stage */}
         <section className="mt-24 max-w-5xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-12">Tailored to Your Life Stage</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
@@ -120,6 +120,17 @@ export default function Home() {
               </button>
             </div>
           </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="mt-24 text-center bg-gray-50 py-16 rounded-xl shadow-inner px-4 max-w-3xl mx-auto">
+          <h3 className="text-3xl font-bold mb-4">It's your home. We just help keep it running.</h3>
+          <p className="text-lg text-gray-600 mb-8">
+            Join hundreds of Ottawa homeowners who trust Upkept for monthly and seasonal maintenance.
+          </p>
+          <button className="bg-blue-600 text-white text-lg px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+            Book Your First Checkup
+          </button>
         </section>
       </main>
     </>
