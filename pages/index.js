@@ -162,7 +162,7 @@ export default function Home() {
   {/* Decorative Illustration */}
   <div className="relative mt-[-30px] z-0 flex justify-center">
     <img
-      src="/pricing-decor.png"
+      src="/pricing-illustration.png"
       alt="Decorative toolbox and ladder"
       className="w-full max-w-3xl object-contain pointer-events-none select-none"
     />
