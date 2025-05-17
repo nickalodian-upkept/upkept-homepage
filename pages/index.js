@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -13,20 +12,18 @@ export default function Home() {
         {/* Header with Logo */}
         <header className="flex justify-between items-center max-w-7xl mx-auto mb-16">
           <a href="/" className="flex items-center space-x-2">
-  <img
-    src="/logo-upkept.svg"
-    alt="Upkept logo"
-    className="h-8 w-auto"
-  />
-</a>
+            <img
+              src="/upkept-logo.svg"
+              alt="Upkept logo"
+              className="h-8 w-auto block"
+            />
+          </a>
           <nav className="flex space-x-6 text-sm font-medium text-gray-600">
             <a href="#" className="hover:text-blue-600">Plans</a>
             <a href="#" className="hover:text-blue-600">How It Works</a>
             <a href="#" className="text-blue-600 hover:text-blue-700">Sign Up</a>
           </nav>
         </header>
-
-        {/* ...everything else remains unchanged... */}
 
         {/* Hero */}
         <section className="text-center max-w-3xl mx-auto mb-24">
@@ -49,7 +46,9 @@ export default function Home() {
             <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between">
               <div>
                 <h4 className="text-xl font-semibold mb-2">Monthly</h4>
-                <p className="text-3xl font-bold mb-6">$99<span className="text-base font-medium">/month</span></p>
+                <p className="text-3xl font-bold mb-6">
+                  $99<span className="text-base font-medium">/month</span>
+                </p>
                 <ul className="space-y-3 text-gray-600 text-sm">
                   <li>✅ Scheduled seasonal visits</li>
                   <li>✅ 10-point maintenance checklist</li>
@@ -65,7 +64,9 @@ export default function Home() {
             <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between">
               <div>
                 <h4 className="text-xl font-semibold mb-2">Quarterly</h4>
-                <p className="text-3xl font-bold mb-6">$149<span className="text-base font-medium">/quarter</span></p>
+                <p className="text-3xl font-bold mb-6">
+                  $149<span className="text-base font-medium">/quarter</span>
+                </p>
                 <ul className="space-y-3 text-gray-600 text-sm">
                   <li>✅ Everything in Standard</li>
                   <li>✅ Priority scheduling</li>
@@ -83,30 +84,34 @@ export default function Home() {
         <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
           <h3 className="text-3xl font-bold mb-12">How It Works</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            {/* Step 1 */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-              <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
-                1
+            {[
+              {
+                step: 1,
+                title: 'Schedule a visit',
+                desc: 'Choose a plan and book your first maintenance appointment.',
+              },
+              {
+                step: 2,
+                title: 'Get reliable upkeep',
+                desc: 'Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.',
+              },
+              {
+                step: 3,
+                title: 'Stay in control',
+                desc: 'After each visit, receive a detailed report on your home’s condition and any work completed.',
+              },
+            ].map(({ step, title, desc }) => (
+              <div
+                key={step}
+                className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm"
+              >
+                <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
+                  {step}
+                </div>
+                <h4 className="text-lg font-semibold mb-2">{title}</h4>
+                <p className="text-sm text-gray-600">{desc}</p>
               </div>
-              <h4 className="text-lg font-semibold mb-2">Schedule a visit</h4>
-              <p className="text-sm text-gray-600">Choose a plan and book your first maintenance appointment.</p>
-            </div>
-            {/* Step 2 */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-              <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
-                2
-              </div>
-              <h4 className="text-lg font-semibold mb-2">Get reliable upkeep</h4>
-              <p className="text-sm text-gray-600">Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.</p>
-            </div>
-            {/* Step 3 */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-              <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
-                3
-              </div>
-              <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
-              <p className="text-sm text-gray-600">After each visit, receive a detailed report on your home’s condition and any work completed.</p>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -118,7 +123,9 @@ export default function Home() {
             <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="text-3xl mb-4">🏠</div>
-                <h4 className="text-lg font-semibold mb-4">For Families Supporting Aging Parents</h4>
+                <h4 className="text-lg font-semibold mb-4">
+                  For Families Supporting Aging Parents
+                </h4>
                 <ul className="space-y-2 text-gray-600 text-sm">
                   <li>✅ Check on your parents’ home safety remotely</li>
                   <li>✅ Manage home upkeep for them</li>
