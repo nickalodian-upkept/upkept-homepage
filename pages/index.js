@@ -1,6 +1,17 @@
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const cities = ['Ottawa', 'Kanata', 'Richmond', 'Barrhaven'];
+  const [currentCity, setCurrentCity] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCity((prev) => (prev + 1) % cities.length);
+    }, 2000); // Rotate every 2 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <Head>
@@ -24,6 +35,33 @@ export default function Home() {
             <a href="#" className="text-blue-600 hover:text-blue-700">Sign Up</a>
           </nav>
         </header>
+
+        {/* Hero */}
+        <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            {/* Left Side: Headline & CTA */}
+            <div className="text-left">
+              <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
+                Hey <span className="text-blue-600 transition-opacity duration-500">{cities[currentCity]}</span>—time to get proactive with your home upkeep
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Our subscription keeps your home safe and maintained with thorough, scheduled visits.
+              </p>
+              <button className="bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+                View Plans
+              </button>
+            </div>
+
+            {/* Right Side: Hero Image */}
+            <div className="flex justify-center md:justify-end">
+              <img
+                src="/hero-house.png"
+                alt="Illustration of a cozy home with flower and grass"
+                className="w-72 sm:w-96 md:w-[28rem] lg:w-[32rem]"
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Hero Section */}
 <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-24">
