@@ -50,9 +50,10 @@ export default function Home() {
   <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
     {/* Left Side: Headline & CTA */}
     <div className="text-left relative z-10">
-      <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
+    <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
+      <span className="block">
         Hey{' '}
-        <span className="relative inline-block w-[10ch] text-blue-600">
+        <span className="relative inline-block w-[10ch] align-middle text-blue-600 leading-none">
           {cities.map((city, index) => (
             <span
               key={city}
@@ -64,9 +65,9 @@ export default function Home() {
             </span>
           ))}
         </span>
-        <br />
-        time to get proactive with your home upkeep
-      </h2>
+      </span>
+      <span className="block">time to get proactive with your home upkeep</span>
+    </h2>
       <p className="text-lg text-gray-600 mb-6">
         Our subscription keeps your home safe and maintained with thorough, scheduled visits.
       </p>
