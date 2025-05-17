@@ -27,7 +27,7 @@ export default function Home() {
       <img
         src="/upkept-logo-new.svg"
         alt="Upkept logo"
-        className="h-6 sm:h-7 w-auto"
+        className="h-8 sm:h-10 w-auto"
       />
     </a>
     <nav className="flex items-center space-x-6 text-sm font-medium text-gray-600">
