@@ -55,8 +55,8 @@ export default function Home() {
         {city}
       </span>
     ))}
-  </span>
-  —time to get proactive with your home upkeep
+  </span>{' '}
+  time to get proactive with your home upkeep
 </h2>
               <p className="text-lg text-gray-600 mb-6">
                 Our subscription keeps your home safe and maintained with thorough, scheduled visits.
