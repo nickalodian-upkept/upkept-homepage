@@ -87,6 +87,40 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Tailored to Your Life Stage */}
+        <section className="mt-24 max-w-5xl mx-auto text-center">
+          <h3 className="text-2xl font-bold mb-12">Tailored to Your Life Stage</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            {/* For Families */}
+            <div className="border border-gray-200 rounded-lg p-6 shadow-sm">
+              <div className="text-4xl mb-4">👪</div>
+              <h4 className="text-lg font-semibold mb-2">For Families Supporting Aging Parents</h4>
+              <ul className="space-y-2 text-gray-700 list-disc list-inside mb-6">
+                <li>Check on your parents’ home safety remotely</li>
+                <li>Manage home upkeep for them</li>
+                <li>Receive photo-verified checkup reports</li>
+              </ul>
+              <button className="bg-gray-100 border rounded px-4 py-2 hover:bg-gray-200 transition">
+                Learn More
+              </button>
+            </div>
+
+            {/* For Professionals */}
+            <div className="border border-gray-200 rounded-lg p-6 shadow-sm">
+              <div className="text-4xl mb-4">💼</div>
+              <h4 className="text-lg font-semibold mb-2">For Busy Professionals</h4>
+              <ul className="space-y-2 text-gray-700 list-disc list-inside mb-6">
+                <li>Simplify your life with scheduled upkeep</li>
+                <li>Manage home maintenance at ease</li>
+                <li>Async-friendly, approve fixes by email or text</li>
+              </ul>
+              <button className="bg-gray-100 border rounded px-4 py-2 hover:bg-gray-200 transition">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
