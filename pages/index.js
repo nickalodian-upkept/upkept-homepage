@@ -14,10 +14,9 @@ export default function Home() {
         <header className="flex justify-between items-center max-w-7xl mx-auto mb-16">
           <a href="/" className="flex items-center space-x-2">
             <Image
-              src="/logo-upkept.png"
+              src="/logo-upkept-clean.png"
               alt="upkept logo"
-              width={160}
-              height={40}
+              height={32}
               className="h-8 w-auto"
               priority
             />
