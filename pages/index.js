@@ -15,8 +15,9 @@ export default function Home() {
           <a href="/" className="flex items-center space-x-2">
             <Image
               src="/logo-upkept-clean.png"
-              alt="upkept logo"
-              height={32}
+              alt="Upkept logo"
+              width={160}
+              height={40}
               className="h-8 w-auto"
               priority
             />
