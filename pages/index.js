@@ -43,14 +43,15 @@ export default function Home() {
     {/* Left Side: Headline & CTA */}
     <div className="text-left">
 <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
-  <span className="block sm:inline">
+  <span className="block">
     Hey{' '}
-    <span className="inline-block text-blue-600 font-bold min-w-[9ch] align-baseline transition-all duration-500">
+    <span className="inline-block text-blue-600 font-bold min-w-[9ch] transition-all duration-500">
       {cities[currentCity]}
     </span>
   </span>
-  <br className="sm:hidden" />
-  time to get proactive with your home upkeep
+  <span className="block">
+    time to get proactive with your home upkeep
+  </span>
 </h2>
       <p className="text-lg text-gray-500 mb-8 max-w-xl">
         Our subscription keeps your home safe and maintained with thorough, scheduled visits.
