@@ -32,13 +32,6 @@ export default function Home() {
           </button>
         </section>
 
-        {/* Tailwind Test Box */}
-        <section className="mb-24">
-          <div className="p-6 bg-yellow-100 text-lg font-medium text-center rounded-xl shadow-sm max-w-md mx-auto">
-            ✅ Tailwind is working if this box is styled!
-          </div>
-        </section>
-
         {/* Pricing Plans */}
         <section className="mt-24 max-w-6xl mx-auto px-4">
           <h3 className="text-3xl font-bold text-center mb-12">Choose Your Plan</h3>
@@ -104,6 +97,44 @@ export default function Home() {
               </div>
               <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
               <p className="text-sm text-gray-600">After each visit, receive a detailed report on your home’s condition and any work completed.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Tailored to Your Life Stage */}
+        <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
+          <h3 className="text-3xl font-bold mb-12">Tailored to Your Life Stage</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            {/* For Families */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="text-3xl mb-4">🏠</div>
+                <h4 className="text-lg font-semibold mb-4">For Families Supporting Aging Parents</h4>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>✅ Check on your parents’ home safety remotely</li>
+                  <li>✅ Manage home upkeep for them</li>
+                  <li>✅ Receive photo-verified checkup reports</li>
+                </ul>
+              </div>
+              <button className="mt-8 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit">
+                Learn More
+              </button>
+            </div>
+
+            {/* For Professionals */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="text-3xl mb-4">💼</div>
+                <h4 className="text-lg font-semibold mb-4">For Busy Professionals</h4>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>✅ Simplify your life with scheduled upkeep</li>
+                  <li>✅ Manage home maintenance at ease</li>
+                  <li>✅ Async-friendly, approve fixes by email or text</li>
+                </ul>
+              </div>
+              <button className="mt-8 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit">
+                Learn More
+              </button>
             </div>
           </div>
         </section>
