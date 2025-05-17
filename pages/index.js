@@ -46,7 +46,7 @@ export default function Home() {
       <img
         src="/hero-house.png"
         alt="Illustration of a cozy home with flower and grass"
-        className="w-72 sm:w-96 md:w-[28rem] lg:w-[32rem]"
+        className="w-72 sm:w-96 md:w-[28rem] lg:w-[32rem] mx-auto opacity-0 animate-fadeSlideIn"
       />
     </div>
   </div>
