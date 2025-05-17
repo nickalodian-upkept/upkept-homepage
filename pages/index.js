@@ -13,7 +13,7 @@ export default function Home() {
         <header className="flex justify-between items-center max-w-7xl mx-auto mb-16">
           <a href="/" className="flex items-center space-x-2">
             <img
-              src="/upkept-logo.svg"
+              src="/upkept-logo-fixed.svg"
               alt="Upkept logo"
               className="h-20 w-auto block"
             />
