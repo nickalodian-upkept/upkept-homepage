@@ -37,7 +37,6 @@ export default function Home() {
         <section className="mt-16 max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-center mb-8">Choose Your Plan</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
             {/* Monthly Plan */}
             <div className="border border-gray-200 rounded-lg p-6 shadow-sm">
               <h4 className="text-lg font-semibold mb-2">Monthly</h4>
@@ -51,7 +50,6 @@ export default function Home() {
                 Get Started
               </button>
             </div>
-
             {/* Quarterly Plan */}
             <div className="border border-gray-200 rounded-lg p-6 shadow-sm">
               <h4 className="text-lg font-semibold mb-2">Quarterly</h4>
@@ -64,6 +62,28 @@ export default function Home() {
               <button className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
                 Get Started
               </button>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="mt-24 max-w-5xl mx-auto text-center">
+          <h3 className="text-2xl font-bold mb-12">How It Works</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div className="p-6 rounded-lg shadow-sm border border-gray-200">
+              <div className="text-4xl mb-4">📅</div>
+              <h4 className="text-lg font-semibold mb-2">Schedule a visit</h4>
+              <p className="text-gray-600">Choose a plan and book your first maintenance appointment.</p>
+            </div>
+            <div className="p-6 rounded-lg shadow-sm border border-gray-200">
+              <div className="text-4xl mb-4">🛠️</div>
+              <h4 className="text-lg font-semibold mb-2">Get reliable upkeep</h4>
+              <p className="text-gray-600">Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.</p>
+            </div>
+            <div className="p-6 rounded-lg shadow-sm border border-gray-200">
+              <div className="text-4xl mb-4">📋</div>
+              <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
+              <p className="text-gray-600">After each visit, receive a detailed report on your home’s condition and any work completed.</p>
             </div>
           </div>
         </section>
