@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -9,15 +10,25 @@ export default function Home() {
       </Head>
 
       <main className="bg-white min-h-screen px-6 sm:px-8 lg:px-12 py-10 text-gray-800 font-sans">
-        {/* Header */}
+        {/* Header with Logo */}
         <header className="flex justify-between items-center max-w-7xl mx-auto mb-16">
-          <h1 className="text-2xl font-bold tracking-tight">Upkept</h1>
+          <a href="/" className="flex items-center space-x-2">
+            <Image
+              src="/upkept-logo-nav.png"
+              alt="upkept logo"
+              width={130}
+              height={32}
+              priority
+            />
+          </a>
           <nav className="flex space-x-6 text-sm font-medium text-gray-600">
             <a href="#" className="hover:text-blue-600">Plans</a>
             <a href="#" className="hover:text-blue-600">How It Works</a>
             <a href="#" className="text-blue-600 hover:text-blue-700">Sign Up</a>
           </nav>
         </header>
+
+        {/* ...everything else remains unchanged... */}
 
         {/* Hero */}
         <section className="text-center max-w-3xl mx-auto mb-24">
