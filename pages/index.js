@@ -88,10 +88,20 @@ export default function Home() {
 </section>
 
 {/* Pricing Plans */}
-<section className="mt-24 max-w-6xl mx-auto px-4">
-  <h3 className="text-3xl font-bold text-center mb-12">Choose Your Plan</h3>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-    
+<section className="relative mt-24 max-w-6xl mx-auto px-4">
+  {/* Background Illustration */}
+  <img
+    src="/pricing-illustration.png" // Make sure this path matches your file name
+    alt="Toolbox and ladder illustration"
+    className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] opacity-90 pointer-events-none z-0"
+    aria-hidden="true"
+  />
+
+  {/* Section Title */}
+  <h3 className="text-3xl font-bold text-center mb-12 relative z-10">Choose Your Plan</h3>
+
+  {/* Pricing Cards */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
     {/* Monthly Plan */}
     <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between">
       <div>
@@ -157,7 +167,6 @@ export default function Home() {
         Get Started
       </button>
     </div>
-
   </div>
 </section>
 
