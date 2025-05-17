@@ -15,10 +15,20 @@ export default function Home() {
             <a href="#" className="text-blue-600 font-semibold">Sign Up</a>
           </nav>
         </header>
+
         <section className="text-center mt-12">
           <h2 className="text-4xl font-bold mb-4">Hey Ottawa, we’ll take care of your home like it’s our own.</h2>
           <p className="text-lg mb-6 text-gray-600">Choose a plan. Get monthly checkups. Breathe easier.</p>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">View Plans</button>
+          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
+            View Plans
+          </button>
+        </section>
+
+        {/* ✅ Tailwind Test Box */}
+        <section className="mt-12">
+          <div className="p-6 bg-yellow-100 text-xl font-medium text-center rounded-xl shadow-md">
+            ✅ Tailwind is working if this box is styled!
+          </div>
         </section>
       </main>
     </>
