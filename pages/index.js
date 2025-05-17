@@ -25,7 +25,7 @@ export default function Home() {
   <div className="flex justify-between items-center max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
     <a href="/" className="flex items-center space-x-2">
       <img
-        src="/upkept-logo.svg"
+        src="/upkept-logo-new.svg"
         alt="Upkept logo"
         className="h-6 sm:h-7 w-auto"
       />
@@ -79,7 +79,7 @@ export default function Home() {
     {/* Right Side: Hero Image */}
     <div className="flex justify-center md:justify-end relative z-10">
       <img
-        src="/hero-house.png"
+        src="/hero-house-new.png"
         alt="Illustration of a cozy home with flower and grass"
         className="w-72 sm:w-96 md:w-[28rem] lg:w-[32rem]"
       />
