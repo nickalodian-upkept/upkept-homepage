@@ -42,23 +42,22 @@ export default function Home() {
     
     {/* Left Side: Headline & CTA */}
     <div className="text-left">
-      <h2 className="text-5xl sm:text-6xl font-semibold leading-tight tracking-tight text-gray-900 mb-6">
-        <span className="block">Hey{' '}
-          <span className="relative inline-block w-[11ch] text-blue-600 font-bold">
-            {cities.map((city, index) => (
-              <span
-                key={city}
-                className={`absolute left-0 top-0 transition-opacity duration-500 ${
-                  index === currentCity ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                {city}
-              </span>
-            ))}
+    <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
+      <span className="block sm:inline">Hey</span>{' '}
+      <span className="relative inline-flex w-[11ch] align-middle">
+        {cities.map((city, index) => (
+          <span
+            key={city}
+            className={`absolute left-0 top-0 transition-opacity duration-500 ${
+              index === currentCity ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <span className="text-blue-600">{city}</span>
           </span>
-        </span>
-        <span className="block">time to get proactive with your home upkeep</span>
-      </h2>
+        ))}
+      </span>{' '}
+      <span className="block sm:inline">time to get proactive with your home upkeep</span>
+    </h2>
       <p className="text-lg text-gray-500 mb-8 max-w-xl">
         Our subscription keeps your home safe and maintained with thorough, scheduled visits.
       </p>
