@@ -138,6 +138,17 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Final CTA */}
+        <section className="mt-32 mb-24 text-center bg-gray-50 py-16 px-6 rounded-2xl shadow-inner max-w-3xl mx-auto">
+          <h3 className="text-3xl font-bold mb-4">It’s your home. We just help keep it running.</h3>
+          <p className="text-base sm:text-lg text-gray-600 mb-8">
+            Everything is in order. Nothing’s breaking down. And your only job is to just come home and enjoy it.
+          </p>
+          <button className="bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-lg hover:bg-blue-700 transition shadow">
+            Book Your First Checkup
+          </button>
+        </section>
       </main>
     </>
   );
