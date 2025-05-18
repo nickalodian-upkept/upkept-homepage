@@ -174,54 +174,53 @@ export default function Home() {
 </section>
 
 {/* How It Works Section */}
-<section id="how-it-works" className="bg-blue-50 py-24 px-4 sm:px-8 lg:px-12">
-  <div className="max-w-6xl mx-auto mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-    <div>
-      <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
-      <p className="mt-2 text-gray-600 text-base">
-        We make home upkeep proactive and hassle-free. Here's how:
-      </p>
-    </div>
-    <a 
-      href="#how-it-works" 
-      className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
-    >
-      How it works →
-    </a>
-  </div>
-
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    {/* Step 1 */}
-    <div className="bg-white rounded-2xl shadow p-8 text-left">
-      <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
-        1
+<section className="bg-blue-50 py-24 sm:px-8 lg:px-12 mt-24">
+  <div className="max-w-6xl mx-auto">
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-12 px-4 sm:px-0">
+      <div>
+        <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
+        <p className="mt-4 text-gray-600 text-base sm:text-lg">
+          We make home upkeep proactive and hassle-free. Here’s how:
+        </p>
       </div>
-      <h4 className="text-lg font-semibold mb-2">Schedule a visit</h4>
-      <p className="text-sm text-gray-600">
-        Choose a plan and book your first maintenance appointment.
-      </p>
+      <div className="mt-6 sm:mt-0">
+        <a
+          href="#how-it-works"
+          className="inline-flex items-center gap-2 bg-blue-600 text-white font-medium px-5 py-3 rounded-lg shadow-sm hover:bg-blue-700 transition"
+        >
+          How it works
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
 
-    {/* Step 2 */}
-    <div className="bg-white rounded-2xl shadow p-8 text-left">
-      <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
-        2
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-0">
+      {/* Step 1 */}
+      <div className="bg-white rounded-2xl p-6 shadow-md">
+        <div className="w-8 h-8 flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full font-bold mb-4">1</div>
+        <h4 className="text-lg font-semibold mb-2">Schedule a visit</h4>
+        <p className="text-sm text-gray-600">
+          Choose a plan and book your first maintenance appointment.
+        </p>
       </div>
-      <h4 className="text-lg font-semibold mb-2">Get reliable upkeep</h4>
-      <p className="text-sm text-gray-600">
-        Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.
-      </p>
-    </div>
 
-    {/* Step 3 */}
-    <div className="bg-white rounded-2xl shadow p-8 text-left">
-      <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
-        3
+      {/* Step 2 */}
+      <div className="bg-white rounded-2xl p-6 shadow-md">
+        <div className="w-8 h-8 flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full font-bold mb-4">2</div>
+        <h4 className="text-lg font-semibold mb-2">Get reliable upkeep</h4>
+        <p className="text-sm text-gray-600">
+          Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.
+        </p>
       </div>
-      <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
-      <p className="text-sm text-gray-600">
-        After each visit, receive a detailed report on your home’s condition and any work completed.
-      </p>
+
+      {/* Step 3 */}
+      <div className="bg-white rounded-2xl p-6 shadow-md">
+        <div className="w-8 h-8 flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full font-bold mb-4">3</div>
+        <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
+        <p className="text-sm text-gray-600">
+          After each visit, receive a detailed report on your home’s condition and any work completed.
+        </p>
+      </div>
     </div>
   </div>
 </section>
