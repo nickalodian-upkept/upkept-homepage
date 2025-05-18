@@ -247,9 +247,13 @@ export default function Home() {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
 
     {/* For Families */}
-    <div className="bg-[#FCD34D] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center">
-      <img src="/life-stage-families.png" alt="Family Icon" className="w-24 sm:w-28 mb-8 drop-shadow-lg" />
-      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between flex-grow">
+    <div className="bg-[#FCD34D] rounded-3xl pt-20 pb-10 px-6 sm:px-8 flex flex-col items-center relative">
+      <img
+        src="/life-stage-families.png"
+        alt="Family Icon"
+        className="absolute -top-12 w-32 sm:w-40 drop-shadow-xl transition-transform hover:scale-105"
+      />
+      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between">
         <div>
           <h4 className="text-lg font-semibold mb-4">For Families Supporting Aging Parents</h4>
           <ul className="space-y-3 text-gray-700 text-sm">
@@ -274,9 +278,13 @@ export default function Home() {
     </div>
 
     {/* For Professionals */}
-    <div className="bg-[#3B82F6] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center">
-      <img src="/life-stage-professionals.png" alt="Professional Icon" className="w-24 sm:w-28 mb-8 drop-shadow-lg" />
-      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between flex-grow">
+    <div className="bg-[#3B82F6] rounded-3xl pt-20 pb-10 px-6 sm:px-8 flex flex-col items-center relative">
+      <img
+        src="/life-stage-professionals.png"
+        alt="Professional Icon"
+        className="absolute -top-12 w-32 sm:w-40 drop-shadow-xl transition-transform hover:scale-105"
+      />
+      <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between">
         <div>
           <h4 className="text-lg font-semibold mb-4">For Busy Professionals</h4>
           <ul className="space-y-3 text-gray-700 text-sm">
