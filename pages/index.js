@@ -18,6 +18,7 @@ export default function Home() {
       <Head>
         <title>Upkept | Home Maintenance Made Easy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="bg-white min-h-screen px-6 sm:px-8 lg:px-12 py-10 text-gray-800 font-sans">
