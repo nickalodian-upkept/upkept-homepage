@@ -175,52 +175,50 @@ export default function Home() {
 
 {/* How It Works Section */}
 <section className="bg-blue-50 py-24 sm:px-8 lg:px-12 mt-24">
-  <div className="max-w-6xl mx-auto">
-    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-12 px-4 sm:px-0">
-      <div>
-        <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
-        <p className="mt-4 text-gray-600 text-base sm:text-lg">
-          We make home upkeep proactive and hassle-free. Here’s how:
-        </p>
-      </div>
-      <div className="mt-6 sm:mt-0">
-        <a
-          href="#how-it-works"
-          className="inline-flex items-center gap-2 bg-blue-600 text-white font-medium px-5 py-3 rounded-lg shadow-sm hover:bg-blue-700 transition"
-        >
-          How it works
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
+  <div className="max-w-6xl mx-auto flex justify-between items-start mb-12">
+    <div>
+      <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
+      <p className="mt-4 text-gray-600 text-base sm:text-lg">
+        We make home upkeep proactive and hassle-free. Here’s how:
+      </p>
+    </div>
+    <a
+      href="#"
+      className="inline-flex items-center px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition text-sm sm:text-base"
+    >
+      How it works
+      <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {/* Step 1 */}
+    <div className="bg-white rounded-2xl shadow p-6 text-center">
+      <img src="/how-it-works-1.png" alt="Schedule a visit" className="mx-auto mb-4 w-16 h-16" />
+      <h4 className="text-lg font-semibold mb-2">Schedule a visit</h4>
+      <p className="text-sm text-gray-600">
+        Choose a plan and book your first maintenance appointment.
+      </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-0">
-      {/* Step 1 */}
-      <div className="bg-white rounded-2xl p-6 shadow-md">
-        <div className="w-8 h-8 flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full font-bold mb-4">1</div>
-        <h4 className="text-lg font-semibold mb-2">Schedule a visit</h4>
-        <p className="text-sm text-gray-600">
-          Choose a plan and book your first maintenance appointment.
-        </p>
-      </div>
+    {/* Step 2 */}
+    <div className="bg-white rounded-2xl shadow p-6 text-center">
+      <img src="/how-it-works-2.png" alt="Get reliable upkeep" className="mx-auto mb-4 w-16 h-16" />
+      <h4 className="text-lg font-semibold mb-2">Get reliable upkeep</h4>
+      <p className="text-sm text-gray-600">
+        Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.
+      </p>
+    </div>
 
-      {/* Step 2 */}
-      <div className="bg-white rounded-2xl p-6 shadow-md">
-        <div className="w-8 h-8 flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full font-bold mb-4">2</div>
-        <h4 className="text-lg font-semibold mb-2">Get reliable upkeep</h4>
-        <p className="text-sm text-gray-600">
-          Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.
-        </p>
-      </div>
-
-      {/* Step 3 */}
-      <div className="bg-white rounded-2xl p-6 shadow-md">
-        <div className="w-8 h-8 flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full font-bold mb-4">3</div>
-        <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
-        <p className="text-sm text-gray-600">
-          After each visit, receive a detailed report on your home’s condition and any work completed.
-        </p>
-      </div>
+    {/* Step 3 */}
+    <div className="bg-white rounded-2xl shadow p-6 text-center">
+      <img src="/how-it-works-3.png" alt="Stay in control" className="mx-auto mb-4 w-16 h-16" />
+      <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
+      <p className="text-sm text-gray-600">
+        After each visit, receive a detailed report on your home's condition and any work completed.
+      </p>
     </div>
   </div>
 </section>
