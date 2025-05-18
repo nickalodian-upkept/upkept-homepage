@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 
 export default function Home() {
-  const cities = ['Ottawa', 'Kanata', 'Richmond', 'Barrhaven'];
+  const cities = ['Ottawa', 'Kanata', 'Stittsville', 'Richmond', 'Barrhaven'];
   const [currentCity, setCurrentCity] = useState(0);
 
   useEffect(() => {
