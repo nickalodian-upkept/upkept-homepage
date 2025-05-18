@@ -196,8 +196,8 @@ export default function Home() {
       {/* Step 1 */}
       <div className="bg-white rounded-2xl p-6 text-center shadow-sm">
         <img
-          src="/how-step-1.png"
-          alt="Calendar with number 1"
+          src="/how-it-works-1.png"
+          alt="Step 1 icon"
           className="h-16 mx-auto mb-4 object-contain"
         />
         <h4 className="text-lg font-semibold text-gray-900 mb-1">
@@ -211,8 +211,8 @@ export default function Home() {
       {/* Step 2 */}
       <div className="bg-white rounded-2xl p-6 text-center shadow-sm">
         <img
-          src="/how-step-2.png"
-          alt="Calendar with number 2"
+          src="/how-it-works-2.png"
+          alt="Step 2 icon"
           className="h-16 mx-auto mb-4 object-contain"
         />
         <h4 className="text-lg font-semibold text-gray-900 mb-1">
@@ -226,8 +226,8 @@ export default function Home() {
       {/* Step 3 */}
       <div className="bg-white rounded-2xl p-6 text-center shadow-sm">
         <img
-          src="/how-step-3.png"
-          alt="Clipboard checklist"
+          src="/how-it-works-3.png"
+          alt="Step 3 icon"
           className="h-16 mx-auto mb-4 object-contain"
         />
         <h4 className="text-lg font-semibold text-gray-900 mb-1">
