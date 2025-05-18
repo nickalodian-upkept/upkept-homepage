@@ -173,40 +173,50 @@ export default function Home() {
   </div>
 </section>
 
-        {/* How It Works */}
-        <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold mb-12">How It Works</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            {[
-              {
-                step: 1,
-                title: 'Schedule a visit',
-                desc: 'Choose a plan and book your first maintenance appointment.',
-              },
-              {
-                step: 2,
-                title: 'Get reliable upkeep',
-                desc: 'Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.',
-              },
-              {
-                step: 3,
-                title: 'Stay in control',
-                desc: 'After each visit, receive a detailed report on your home’s condition and any work completed.',
-              },
-            ].map(({ step, title, desc }) => (
-              <div
-                key={step}
-                className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm"
-              >
-                <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
-                  {step}
-                </div>
-                <h4 className="text-lg font-semibold mb-2">{title}</h4>
-                <p className="text-sm text-gray-600">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+{/* How It Works Section */}
+<section className="bg-blue-50 py-24 px-4 sm:px-8 lg:px-12">
+  <div className="max-w-6xl mx-auto text-center mb-16">
+    <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
+    <p className="mt-4 text-gray-600 text-base sm:text-lg">
+      We make home upkeep proactive and hassle-free. Here's how:
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {/* Step 1 */}
+    <div className="bg-white rounded-2xl shadow p-8 text-left">
+      <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
+        1
+      </div>
+      <h4 className="text-lg font-semibold mb-2">Schedule a visit</h4>
+      <p className="text-sm text-gray-600">
+        Choose a plan and book your first maintenance appointment.
+      </p>
+    </div>
+
+    {/* Step 2 */}
+    <div className="bg-white rounded-2xl shadow p-8 text-left">
+      <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
+        2
+      </div>
+      <h4 className="text-lg font-semibold mb-2">Get reliable upkeep</h4>
+      <p className="text-sm text-gray-600">
+        Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.
+      </p>
+    </div>
+
+    {/* Step 3 */}
+    <div className="bg-white rounded-2xl shadow p-8 text-left">
+      <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
+        3
+      </div>
+      <h4 className="text-lg font-semibold mb-2">Stay in control</h4>
+      <p className="text-sm text-gray-600">
+        After each visit, receive a detailed report on your home’s condition and any work completed.
+      </p>
+    </div>
+  </div>
+</section>
 
 {/* Tailored to Your Life Stage */}
 <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
