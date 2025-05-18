@@ -245,13 +245,13 @@ export default function Home() {
 <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
   <h3 className="text-3xl font-bold mb-12">Tailored to Your Life Stage</h3>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-
+    
     {/* For Families */}
-    <div className="bg-[#FCD34D] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center">
+    <div className="group bg-[#FCD34D] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center transition transform hover:scale-105 duration-300 ease-in-out">
       <img
         src="/life-stage-families.png"
         alt="Family Icon"
-        className="w-28 sm:w-32 mb-10 sm:mb-12 drop-shadow-xl"
+        className="w-28 sm:w-32 mb-8 drop-shadow-lg transition duration-300 ease-in-out group-hover:scale-110"
       />
       <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between flex-grow">
         <div>
@@ -278,11 +278,11 @@ export default function Home() {
     </div>
 
     {/* For Professionals */}
-    <div className="bg-[#3B82F6] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center">
+    <div className="group bg-[#3B82F6] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center transition transform hover:scale-105 duration-300 ease-in-out">
       <img
         src="/life-stage-professionals.png"
         alt="Professional Icon"
-        className="w-28 sm:w-32 mb-12 sm:mb-16 drop-shadow-xl"
+        className="w-28 sm:w-32 mb-8 drop-shadow-lg transition duration-300 ease-in-out group-hover:scale-110"
       />
       <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between flex-grow">
         <div>
