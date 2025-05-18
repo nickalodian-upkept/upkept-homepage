@@ -26,7 +26,7 @@ export default function Home() {
   <div className="flex justify-between items-center max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
     <a href="/" className="flex items-center space-x-2">
       <img
-        src="/upkept-logo-new.svg"
+        src="/upkept-logo.svg"
         alt="Upkept logo"
         className="h-14 sm:h-16 w-auto"
       />
