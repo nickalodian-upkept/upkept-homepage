@@ -174,15 +174,23 @@ export default function Home() {
 </section>
 
 {/* How It Works Section */}
-<section className="bg-blue-50 py-24 px-4 sm:px-8 lg:px-12">
-  <div className="max-w-6xl mx-auto text-center mb-16">
-    <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
-    <p className="mt-4 text-gray-600 text-base sm:text-lg">
-      We make home upkeep proactive and hassle-free. Here's how:
-    </p>
+<section id="how-it-works" className="bg-blue-50 py-24 px-4 sm:px-8 lg:px-12">
+  <div className="max-w-6xl mx-auto mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
+      <p className="mt-2 text-gray-600 text-base">
+        We make home upkeep proactive and hassle-free. Here's how:
+      </p>
+    </div>
+    <a 
+      href="#how-it-works" 
+      className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
+    >
+      How it works →
+    </a>
   </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
     {/* Step 1 */}
     <div className="bg-white rounded-2xl shadow p-8 text-left">
       <div className="text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 mb-4">
