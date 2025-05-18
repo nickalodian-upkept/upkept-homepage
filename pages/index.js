@@ -46,47 +46,45 @@ export default function Home() {
   </div>
 </header>
 
-{/* Hero */}
-<section className="bg-gray-50 rounded-3xl px-6 sm:px-8 lg:px-12 py-20 max-w-7xl mx-auto mb-24 shadow-sm">
-  <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-    {/* Left Side: Headline & CTA */}
-    <div className="text-left relative z-10">
-    <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
-      <span className="block">
-        Hey{' '}
-        <span className="relative inline-block w-[10ch] align-middle text-blue-600 leading-none">
-          {cities.map((city, index) => (
-            <span
-              key={city}
-              className={`absolute left-0 top-0 transition-opacity duration-500 ${
-                index === currentCity ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              {city}
-            </span>
-          ))}
-        </span>
-      </span>
-      <span className="block">time to get proactive with your home upkeep</span>
-    </h2>
-      <p className="text-lg text-gray-600 mb-6">
-        Our subscription keeps your home safe and maintained with thorough, scheduled visits.
-      </p>
-      <button className="bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
-        View Plans
-      </button>
-    </div>
+        {/* Hero */}
+        <section className="bg-gray-50 rounded-3xl px-6 sm:px-8 lg:px-12 py-20 max-w-7xl mx-auto mb-24 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            {/* Left Side: Headline & CTA */}
+            <div className="text-left relative z-10">
+              <h2 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight">
+                <span className="block">
+                  Hey{' '}
+                  <span className="relative inline-block w-[10ch] align-middle text-blue-600 leading-none h-[1.2em]">
+                    {cities.map((city, index) => (
+                      <span
+                        key={city}
+                        className={`absolute left-0 top-0 transition-all duration-500 ease-in-out transform ${index === currentCity ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
+                      >
+                        {city}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+                <span className="block">time to get proactive with your home upkeep</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Our subscription keeps your home safe and maintained with thorough, scheduled visits.
+              </p>
+              <button className="bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+                View Plans
+              </button>
+            </div>
 
-    {/* Right Side: Hero Image */}
-    <div className="flex justify-center md:justify-end relative z-10">
-      <img
-        src="/hero-house-new.png"
-        alt="Illustration of a cozy home with flower and grass"
-        className="w-72 sm:w-96 md:w-[28rem] lg:w-[32rem]"
-      />
-    </div>
-  </div>
-</section>
+            {/* Right Side: Hero Image */}
+            <div className="flex justify-center md:justify-end relative z-10">
+              <img
+                src="/hero-house-new.png"
+                alt="Illustration of a cozy home with flower and grass"
+                className="w-72 sm:w-96 md:w-[28rem] lg:w-[32rem] transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+          </div>
+        </section>
 
 {/* Pricing Plans */}
 <section className="mt-24 max-w-6xl mx-auto px-4">
