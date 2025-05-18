@@ -243,22 +243,22 @@ export default function Home() {
 
 {/* Tailored to Your Life Stage */}
 <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
-  <h3 className="text-3xl font-bold mb-12">Tailored to Your Life Stage</h3>
+  <h3 className="text-3xl font-bold mb-12 text-gray-900">Tailored to Your Life Stage</h3>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-    
+
     {/* For Families */}
-    <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm flex flex-col justify-between">
+    <div className="bg-[#781C6D] rounded-2xl p-8 text-white flex flex-col justify-between">
       <div>
-        <div className="text-3xl mb-4">🏠</div>
+        <div className="text-4xl mb-4">🏠</div>
         <h4 className="text-lg font-semibold mb-4">For Families Supporting Aging Parents</h4>
-        <ul className="space-y-2 text-gray-600 text-sm">
+        <ul className="space-y-3 text-sm">
           {[
             "Check on your parents’ home safety remotely",
             "Manage home upkeep for them",
             "Receive photo-verified checkup reports"
           ].map((item, index) => (
             <li key={index} className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-green-600 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-white mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <span>{item}</span>
@@ -266,24 +266,24 @@ export default function Home() {
           ))}
         </ul>
       </div>
-      <button className="mt-8 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit">
+      <button className="mt-8 bg-white text-[#781C6D] text-sm font-semibold rounded px-4 py-2 hover:bg-gray-100 transition w-fit">
         Learn More
       </button>
     </div>
 
     {/* For Professionals */}
-    <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm flex flex-col justify-between">
+    <div className="bg-[#0059FF] rounded-2xl p-8 text-white flex flex-col justify-between">
       <div>
-        <div className="text-3xl mb-4">💼</div>
+        <div className="text-4xl mb-4">💼</div>
         <h4 className="text-lg font-semibold mb-4">For Busy Professionals</h4>
-        <ul className="space-y-2 text-gray-600 text-sm">
+        <ul className="space-y-3 text-sm">
           {[
             "Simplify your life with scheduled upkeep",
             "Manage home maintenance at ease",
             "Async-friendly, approve fixes by email or text"
           ].map((item, index) => (
             <li key={index} className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-green-600 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-white mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <span>{item}</span>
@@ -291,7 +291,7 @@ export default function Home() {
           ))}
         </ul>
       </div>
-      <button className="mt-8 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit">
+      <button className="mt-8 bg-white text-[#0059FF] text-sm font-semibold rounded px-4 py-2 hover:bg-gray-100 transition w-fit">
         Learn More
       </button>
     </div>
