@@ -248,7 +248,7 @@ export default function Home() {
 
     {/* For Families */}
     <div className="bg-[#FCD34D] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center">
-      <img src="/life-stage-families.png" alt="Family Icon" className="h-24 w-24 mb-4" />
+      <img src="/life-stage-families.png" alt="Family Icon" className="w-24 sm:w-28 mb-8 drop-shadow-lg" />
       <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between flex-grow">
         <div>
           <h4 className="text-lg font-semibold mb-4">For Families Supporting Aging Parents</h4>
@@ -275,7 +275,7 @@ export default function Home() {
 
     {/* For Professionals */}
     <div className="bg-[#3B82F6] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center">
-      <img src="/life-stage-professionals.png" alt="Professional Icon" className="h-24 w-24 mb-4" />
+      <img src="/life-stage-professionals.png" alt="Professional Icon" className="w-24 sm:w-28 mb-8 drop-shadow-lg" />
       <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 w-full flex flex-col justify-between flex-grow">
         <div>
           <h4 className="text-lg font-semibold mb-4">For Busy Professionals</h4>
