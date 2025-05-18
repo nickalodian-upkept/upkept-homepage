@@ -88,12 +88,18 @@ export default function Home() {
 </section>
 
 {/* Pricing Plans */}
-<section className="relative mt-24 max-w-6xl mx-auto px-4">
+<section className="mt-24 max-w-6xl mx-auto px-4">
   <h3 className="text-3xl font-bold text-center mb-12">Choose Your Plan</h3>
-
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-10 relative">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
     {/* Monthly Plan */}
-    <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between">
+    <div className="relative bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between overflow-hidden">
+      {/* Top-right Icon */}
+      <img
+        src="/toolbox-icon.png"
+        alt="Toolbox icon"
+        className="absolute top-4 right-4 h-12 w-12"
+      />
       <div>
         <h4 className="text-xl font-semibold mb-2">Monthly</h4>
         <p className="text-3xl font-bold mb-6">
@@ -126,7 +132,13 @@ export default function Home() {
     </div>
 
     {/* Quarterly Plan */}
-    <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between">
+    <div className="relative bg-white rounded-2xl border border-gray-200 p-8 shadow-md flex flex-col justify-between overflow-hidden">
+      {/* Top-right Icon */}
+      <img
+        src="/ladder-lightbulb-icon.png"
+        alt="Step ladder icon"
+        className="absolute top-4 right-4 h-12 w-12"
+      />
       <div>
         <h4 className="text-xl font-semibold mb-2">Quarterly</h4>
         <p className="text-3xl font-bold mb-6">
@@ -157,14 +169,8 @@ export default function Home() {
         Get Started
       </button>
     </div>
-  </div>
 
-  {/* Grass break visual */}
-  <img
-    src="/pricing-grass.png"
-    alt="Decorative grass with small flowers"
-    className="w-full max-w-6xl mx-auto mt-[-20px] z-0 relative pointer-events-none select-none"
-  />
+  </div>
 </section>
 
         {/* How It Works */}
