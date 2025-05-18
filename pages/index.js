@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const cities = ['Ottawa', 'Kanata', 'Richmond', 'Barrhaven'];
@@ -317,6 +318,7 @@ export default function Home() {
             Book Your First Checkup
           </button>
         </section>
+        <Footer />
       </main>
     </>
   );
