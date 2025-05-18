@@ -98,7 +98,7 @@ export default function Home() {
       <img
         src="/toolbox-icon.png"
         alt="Toolbox icon"
-        className="absolute top-4 right-4 h-12 w-12"
+        className="w-16 h-16 absolute top-4 right-4"
       />
       <div>
         <h4 className="text-xl font-semibold mb-2">Monthly</h4>
@@ -137,7 +137,7 @@ export default function Home() {
       <img
         src="/ladder-lightbulb-icon.png"
         alt="Step ladder icon"
-        className="absolute top-4 right-4 h-12 w-12"
+        className="w-16 h-16 absolute top-4 right-4"
       />
       <div>
         <h4 className="text-xl font-semibold mb-2">Quarterly</h4>
