@@ -88,7 +88,7 @@ export default function Home() {
 </section>
 
 {/* Pricing Plans */}
-<section className="mt-24 max-w-6xl mx-auto px-4 relative">
+<section className="relative mt-24 max-w-6xl mx-auto px-4">
   <h3 className="text-3xl font-bold text-center mb-12">Choose Your Plan</h3>
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 z-10 relative">
@@ -159,14 +159,12 @@ export default function Home() {
     </div>
   </div>
 
-  {/* Decorative Illustration */}
-  <div className="relative mt-[-30px] z-0 flex justify-center">
-    <img
-      src="/pricing-illustration.png"
-      alt="Decorative toolbox and ladder"
-      className="w-full max-w-3xl object-contain pointer-events-none select-none"
-    />
-  </div>
+  {/* Grass break visual */}
+  <img
+    src="/pricing-grass.png"
+    alt="Decorative grass with small flowers"
+    className="w-full max-w-6xl mx-auto mt-[-20px] z-0 relative pointer-events-none select-none"
+  />
 </section>
 
         {/* How It Works */}
