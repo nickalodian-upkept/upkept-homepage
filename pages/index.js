@@ -173,46 +173,69 @@ export default function Home() {
   </div>
 </section>
 
-        {/* How It Works Section */}
-        <section className="bg-gradient-to-b from-[#E8F1FF] to-[#DDEBFB] py-24 px-6 sm:px-12 lg:px-20">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex justify-between items-center mb-12 flex-wrap gap-4">
-              <div>
-                <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
-                <p className="mt-2 text-gray-600 text-base sm:text-lg">We make home upkeep proactive and hassle-free. Here's how:</p>
-              </div>
-              <a href="#" className="bg-blue-600 text-white text-sm font-medium rounded-lg px-5 py-3 hover:bg-blue-700 transition inline-flex items-center gap-2">
-                How it works
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+{/* How It Works Section */}
+<div className="mt-24">
+  <section className="bg-gradient-to-b from-[#E8F1FF] to-[#DDEBFB] py-24 px-6 sm:px-12 lg:px-20">
+    <div className="max-w-6xl mx-auto">
+      <div className="flex justify-between items-center mb-12 flex-wrap gap-4">
+        <div>
+          <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
+          <p className="mt-2 text-gray-600 text-base sm:text-lg">We make home upkeep proactive and hassle-free. Here's how:</p>
+        </div>
+        <a
+          href="#"
+          className="bg-blue-600 text-white text-sm font-medium rounded-lg px-5 py-3 hover:bg-blue-700 transition inline-flex items-center gap-2"
+        >
+          How it works
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Step 1 */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition group">
-                <img src="/how-it-works-1.png" alt="Calendar Step 1" className="mx-auto w-20 sm:w-24 mb-6 group-hover:scale-105 transition-transform" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Schedule a visit</h4>
-                <p className="text-sm text-gray-600">Choose a plan and book your first maintenance appointment.</p>
-              </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Step 1 */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition group">
+          <img
+            src="/how-it-works-1.png"
+            alt="Calendar Step 1"
+            className="mx-auto w-20 sm:w-24 mb-6 group-hover:scale-105 transition-transform"
+          />
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">Schedule a visit</h4>
+          <p className="text-sm text-gray-600">
+            Choose a plan and book your first maintenance appointment.
+          </p>
+        </div>
 
-              {/* Step 2 */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition group">
-                <img src="/how-it-works-2.png" alt="Calendar Step 2" className="mx-auto w-20 sm:w-24 mb-6 group-hover:scale-105 transition-transform" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Get reliable upkeep</h4>
-                <p className="text-sm text-gray-600">Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.</p>
-              </div>
+        {/* Step 2 */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition group">
+          <img
+            src="/how-it-works-2.png"
+            alt="Calendar Step 2"
+            className="mx-auto w-20 sm:w-24 mb-6 group-hover:scale-105 transition-transform"
+          />
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">Get reliable upkeep</h4>
+          <p className="text-sm text-gray-600">
+            Our dedicated handyman arrives on time to provide proactive maintenance with attention to detail.
+          </p>
+        </div>
 
-              {/* Step 3 */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition group">
-                <img src="/how-it-works-3.png" alt="Clipboard Check" className="mx-auto w-20 sm:w-24 mb-6 group-hover:scale-105 transition-transform" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Stay in control</h4>
-                <p className="text-sm text-gray-600">After each visit, receive a detailed report on your home's condition and any work completed.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Step 3 */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition group">
+          <img
+            src="/how-it-works-3.png"
+            alt="Clipboard Check"
+            className="mx-auto w-20 sm:w-24 mb-6 group-hover:scale-105 transition-transform"
+          />
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">Stay in control</h4>
+          <p className="text-sm text-gray-600">
+            After each visit, receive a detailed report on your home's condition and any work completed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 {/* Tailored to Your Life Stage */}
 <section className="mt-32 max-w-6xl mx-auto px-4 text-center">
