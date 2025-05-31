@@ -11,53 +11,19 @@ export default function TechnicianView() {
   const [visit, setVisit] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [submitting, setSubmitting] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [uploadingTaskIndex, setUploadingTaskIndex] = useState(null);
-  const [isOnline, setIsOnline] = useState(true);
 
-  const TECHNICIAN_ID = 'b43809b4-a28a-4a1b-9b43-922ed6baf216'; // Replace with dynamic tech ID logic later
-
-  useEffect(() => {
-    const updateStatus = () => setIsOnline(navigator.onLine);
-    window.addEventListener('online', updateStatus);
-    window.addEventListener('offline', updateStatus);
-    updateStatus();
-    return () => {
-      window.removeEventListener('online', updateStatus);
-      window.removeEventListener('offline', updateStatus);
-    };
-  }, []);
-
-  useEffect(() => {
-    const syncQueuedUploads = async () => {
-      const queue = JSON.parse(localStorage.getItem('uploadQueue') || '[]');
-      for (const item of queue) {
-        if (item.type === 'photo') {
-          const blob = base64ToBlob(item.fileData);
-          const file = new File([blob], item.fileName);
-          const taskIndex = tasks.findIndex(t => t.id === item.taskId);
-          if (taskIndex !== -1) {
-            await handlePhotoUpload(taskIndex, [file]);
-          }
-        }
-      }
-      localStorage.removeItem('uploadQueue');
-    };
-
-    if (isOnline) {
-      syncQueuedUploads();
-    }
-  }, [isOnline, tasks]);
+  const TECHNICIAN_ID = 'b43809b4-a28a-4a1b-9b43-922ed6baf216'; // Replace later
 
   useEffect(() => {
     const fetchVisits = async () => {
-      const { data, error } = await supabase
+      const { data } = await supabase
         .from('visits')
         .select('id, scheduled_date, location')
         .eq('technician_id', TECHNICIAN_ID)
         .gte('scheduled_date', new Date().toISOString());
 
-      if (!error) setVisits(data);
+      if (data) setVisits(data);
     };
 
     fetchVisits();
@@ -65,13 +31,15 @@ export default function TechnicianView() {
 
   useEffect(() => {
     if (!id) return;
+
     const fetchVisit = async () => {
-      const { data, error } = await supabase
+      const { data: visitData } = await supabase
         .from('visits')
         .select('*, technician:technician_id (name, email)')
         .eq('id', id)
         .single();
-      if (!error) setVisit(data);
+
+      if (visitData) setVisit(visitData);
 
       const { data: visitTasks } = await supabase
         .from('visit_tasks')
@@ -79,48 +47,27 @@ export default function TechnicianView() {
         .eq('visit_id', id);
 
       setTasks(visitTasks || []);
-      setLoading(false);
     };
+
     fetchVisit();
   }, [id]);
 
   const handleTaskChange = (index, updates) => {
     setTasks(prev => {
-      const newTasks = [...prev];
-      newTasks[index] = { ...newTasks[index], ...updates };
-      return newTasks;
+      const updated = [...prev];
+      updated[index] = { ...updated[index], ...updates };
+      return updated;
     });
   };
 
-  const handlePhotoUpload = async (taskIndex, fileList) => {
-    setUploadingTaskIndex(taskIndex);
+  const uploadFilesToStorage = async (taskIndex, files) => {
     const task = tasks[taskIndex];
     const existing = task.proof_photo_urls || [];
     const newUrls = [];
 
-    if (!navigator.onLine) {
-      const offlineQueue = JSON.parse(localStorage.getItem('uploadQueue') || '[]');
-      for (const file of fileList) {
-        const base64 = await fileToBase64(file);
-        offlineQueue.push({
-          type: 'photo',
-          taskId: task.id,
-          fileName: file.name,
-          fileData: base64
-        });
-      }
-      localStorage.setItem('uploadQueue', JSON.stringify(offlineQueue));
-      alert('Offline: Photo(s) queued for upload.');
-      setUploadingTaskIndex(null);
-      return;
-    }
-
-    for (const file of fileList) {
+    for (const file of files) {
       const filename = `${task.id}-${Date.now()}-${file.name}`;
-      const { error } = await supabase.storage.from('task-photos').upload(filename, file, {
-  contentType: file.type,
-  upsert: false,
-});
+      const { error } = await supabase.storage.from('task-photos').upload(filename, file);
       if (!error) {
         const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/task-photos/${filename}`;
         newUrls.push(url);
@@ -135,20 +82,27 @@ export default function TechnicianView() {
       .eq('id', task.id);
 
     handleTaskChange(taskIndex, { proof_photo_urls: updatedUrls });
+  };
+
+  const handlePhotoUpload = async (taskIndex, fileList) => {
+    setUploadingTaskIndex(taskIndex);
+    await uploadFilesToStorage(taskIndex, fileList);
     setUploadingTaskIndex(null);
   };
 
   const handleRemovePhoto = async (taskIndex, urlToRemove) => {
-    const path = urlToRemove.split('/task-photos/')[1];
-    await supabase.storage.from('task-photos').remove([path]);
+    const task = tasks[taskIndex];
+    const updatedUrls = task.proof_photo_urls.filter(url => url !== urlToRemove);
 
-    const updatedUrls = tasks[taskIndex].proof_photo_urls.filter(url => url !== urlToRemove);
     handleTaskChange(taskIndex, { proof_photo_urls: updatedUrls });
 
     await supabase
       .from('visit_tasks')
       .update({ proof_photo_urls: updatedUrls })
-      .eq('id', tasks[taskIndex].id);
+      .eq('id', task.id);
+
+    const filename = urlToRemove.split('/').pop();
+    await supabase.storage.from('task-photos').remove([filename]);
   };
 
   const handleSubmit = async () => {
@@ -176,7 +130,9 @@ export default function TechnicianView() {
             <li key={v.id} className="border p-4 rounded hover:bg-gray-50">
               <p><strong>Date:</strong> {new Date(v.scheduled_date).toLocaleDateString()}</p>
               <p><strong>Location:</strong> {v.location}</p>
-              <Link href={`/admin/technician-view?id=${v.id}`} className="text-blue-600 underline mt-2 inline-block">View Tasks</Link>
+              <Link href={`/admin/technician-view?id=${v.id}`} className="text-blue-600 underline mt-2 inline-block">
+                View Tasks
+              </Link>
             </li>
           ))}
         </ul>
@@ -184,7 +140,6 @@ export default function TechnicianView() {
     );
   }
 
-  if (loading) return <p className="p-6">Loading visit...</p>;
   if (!visit) return <p className="p-6 text-red-500">Visit not found.</p>;
 
   return (
@@ -193,7 +148,7 @@ export default function TechnicianView() {
       <p><strong>Visit Date:</strong> {new Date(visit.scheduled_date).toLocaleDateString()}</p>
       <p><strong>Location:</strong> {visit.location}</p>
 
-      <ul className="mt-6 space-y-4">
+      <ul className="mt-6 space-y-6">
         {tasks.map((task, index) => (
           <li key={task.id} className="border rounded p-4">
             <div className="flex justify-between items-center">
@@ -208,6 +163,7 @@ export default function TechnicianView() {
                 Completed
               </label>
             </div>
+
             <textarea
               className="w-full mt-2 p-2 border rounded"
               rows={2}
@@ -215,39 +171,57 @@ export default function TechnicianView() {
               value={task.technician_notes || ''}
               onChange={(e) => handleTaskChange(index, { technician_notes: e.target.value })}
             />
-            <div className="mt-2">
+
+            <div className="mt-2 flex gap-3 flex-wrap">
+              {/* Take Photo */}
               <button
-                onClick={() => document.getElementById(`photo-${task.id}`).click()}
-                className="mt-1 px-3 py-1 bg-gray-200 rounded text-sm"
+                onClick={() => document.getElementById(`camera-${task.id}`).click()}
+                className="px-3 py-1 bg-gray-200 rounded text-sm"
               >
                 📷 Take Photo
               </button>
               <input
-                id={`photo-${task.id}`}
+                id={`camera-${task.id}`}
                 type="file"
                 accept="image/*"
-                multiple
                 capture="environment"
                 onChange={(e) => handlePhotoUpload(index, e.target.files)}
                 className="hidden"
               />
-              {uploadingTaskIndex === index && (
-                <p className="text-sm text-blue-500 mt-1">Uploading...</p>
-              )}
-              {task.proof_photo_urls?.length > 0 && (
-                <div className="mt-2 grid grid-cols-3 gap-2">
-                  {task.proof_photo_urls.map((url, i) => (
-                    <div key={i} className="relative">
-                      <img src={url} alt="Uploaded proof" className="rounded border" />
-                      <button
-                        onClick={() => handleRemovePhoto(index, url)}
-                        className="absolute top-1 right-1 text-xs bg-red-600 text-white rounded px-1"
-                      >✕</button>
-                    </div>
-                  ))}
-                </div>
-              )}
+
+              {/* Upload Photo */}
+              <button
+                onClick={() => document.getElementById(`upload-${task.id}`).click()}
+                className="px-3 py-1 bg-gray-200 rounded text-sm"
+              >
+                🖼️ Upload Photo
+              </button>
+              <input
+                id={`upload-${task.id}`}
+                type="file"
+                accept="image/*"
+                onChange={(e) => handlePhotoUpload(index, e.target.files)}
+                className="hidden"
+              />
             </div>
+
+            {uploadingTaskIndex === index && (
+              <p className="text-sm text-blue-500 mt-1">Uploading...</p>
+            )}
+
+            {task.proof_photo_urls?.length > 0 && (
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {task.proof_photo_urls.map((url, i) => (
+                  <div key={i} className="relative">
+                    <img src={url} alt="Proof" className="rounded border" />
+                    <button
+                      onClick={() => handleRemovePhoto(index, url)}
+                      className="absolute top-1 right-1 text-xs bg-red-600 text-white rounded px-1"
+                    >✕</button>
+                  </div>
+                ))}
+              </div>
+            )}
           </li>
         ))}
       </ul>
@@ -261,25 +235,4 @@ export default function TechnicianView() {
       </button>
     </main>
   );
-}
-
-// Helper functions
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
-  });
-}
-
-function base64ToBlob(base64) {
-  const parts = base64.split(';base64,');
-  const contentType = parts[0].split(':')[1];
-  const raw = window.atob(parts[1]);
-  const uInt8Array = new Uint8Array(raw.length);
-  for (let i = 0; i < raw.length; ++i) {
-    uInt8Array[i] = raw.charCodeAt(i);
-  }
-  return new Blob([uInt8Array], { type: contentType });
 }
