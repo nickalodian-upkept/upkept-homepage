@@ -1,7 +1,5 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/admin/technician-view": "pages/admin/technician-view.js",
-  "/dashboard": "pages/dashboard.js"
+  "/_document": "pages/_document.js"
 }

@@ -25,58 +25,6 @@ export default function Home() {
 
       <main className="bg-white min-h-screen px-6 sm:px-8 lg:px-12 py-10 text-gray-800 font-sans">
 
-{/* Header */}
-<header className="sticky top-0 z-50 border-b border-gray-200 bg-white backdrop-blur-md">
-  <div className="flex justify-between items-center max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
-    {/* Logo */}
-    <a href="/" className="flex items-center space-x-2">
-      <img src="/upkept-logo.svg" alt="Upkept logo" className="h-10 sm:h-14 w-auto" />
-    </a>
-
-    {/* Desktop Nav */}
-    <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
-      <a href="#plans" className="hover:text-blue-600">Plans</a>
-      <a href="#how-it-works" className="hover:text-blue-600">How It Works</a>
-      <span className="mx-2 text-gray-300">|</span>
-      <a href="#login" className="hover:text-blue-600">Login</a>
-      <a
-        href="#signup"
-        className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition"
-      >
-        Sign Up
-      </a>
-    </nav>
-
-    {/* Mobile CTA + Hamburger */}
-    <div className="flex items-center space-x-4 md:hidden">
-      <a
-        href="#signup"
-        className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition"
-      >
-        Sign Up
-      </a>
-      <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-600 focus:outline-none">
-        <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          {menuOpen ? (
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          )}
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  {/* Mobile Menu Panel */}
-  {menuOpen && (
-    <div className="md:hidden px-6 py-4 space-y-4 bg-white border-t border-gray-100 text-sm font-medium text-gray-700">
-      <a href="#plans" className="block hover:text-blue-600">Plans</a>
-      <a href="#how-it-works" className="block hover:text-blue-600">How It Works</a>
-      <a href="#login" className="block hover:text-blue-600">Login</a>
-    </div>
-  )}
-</header>
-
         {/* Hero Section */}
         <section className="bg-gray-50 rounded-3xl px-6 sm:px-8 lg:px-12 py-20 max-w-7xl mx-auto mb-24 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
@@ -122,9 +70,9 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="flex justify-between items-center mb-12 flex-wrap gap-4">
               <div>
-                <h3 className="text-3xl font-bold text-gray-900">How It Works</h3>
+                <h3 className="text-3xl font-bold text-gray-900">Getting Started Is Simple</h3>
                 <p className="mt-2 text-gray-600 text-base sm:text-lg">
-                  We make home upkeep proactive and hassle-free. Here's how:
+                  Here’s how we keep your home in great shape:
                 </p>
               </div>
               <a href="#" className="bg-blue-600 text-white text-sm font-medium rounded-lg px-5 py-3 hover:bg-blue-700 transition inline-flex items-center gap-2">
@@ -148,7 +96,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition group">
                 <img src="/how-it-works-3.png" alt="Clipboard Check" className="mx-auto w-20 sm:w-24 mb-6 group-hover:scale-105 transition-transform" />
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Stay in control</h4>
-                <p className="text-sm text-gray-600">After each visit, receive a detailed report on your home's condition and any work completed.</p>
+                <p className="text-sm text-gray-600">Track everything in your dashboard, from upcoming visits to completed tasks. Each visit is auto-scheduled and your tech knows exactly what’s next.</p>
               </div>
             </div>
           </div>
@@ -275,8 +223,9 @@ export default function Home() {
                     <li className="flex items-start gap-3"><svg className="w-5 h-5 text-green-600 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg><span>Receive photo-verified checkup reports</span></li>
                   </ul>
                 </div>
-                <button className="mt-6 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit">Learn More</button>
-              </div>
+<a href="/for-families" className="mt-6 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit inline-block">
+  Learn More
+</a>              </div>
             </div>
 
             <div className="group bg-[#3B82F6] rounded-3xl p-6 sm:p-8 flex flex-col justify-between items-center transition transform hover:scale-105 duration-300 ease-in-out">
@@ -290,7 +239,9 @@ export default function Home() {
                     <li className="flex items-start gap-3"><svg className="w-5 h-5 text-green-600 mt-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg><span>Async-friendly, approve fixes by email or text</span></li>
                   </ul>
                 </div>
-                <button className="mt-6 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit">Learn More</button>
+                <a href="/for-professionals" className="mt-6 bg-gray-100 border text-sm text-gray-800 rounded px-4 py-2 hover:bg-gray-200 transition w-fit inline-block">
+  Learn More
+</a>
               </div>
             </div>
           </div>

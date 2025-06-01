@@ -236,3 +236,4 @@ export default function TechnicianView() {
     </main>
   );
 }
+TechnicianView.showNav = false;

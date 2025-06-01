@@ -219,3 +219,4 @@ export default function VisitDetails() {
     </main>
   );
 }
+VisitDetails.showNav = false;
