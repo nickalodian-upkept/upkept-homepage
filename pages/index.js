@@ -250,6 +250,18 @@ export default function Home() {
         {/* What's Included in a Check-Up */}
         <OtherServices />
 
+        {/* Note from the Founder */}
+        <section className="bg-gray-50 py-24 px-6 sm:px-12 lg:px-20 border-b border-gray-200">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">A Note from Our Founder</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              “I started Upkept because I saw how stressful home maintenance can be — especially for busy families and those supporting aging parents.
+              We’re here to take that weight off your shoulders, so you can spend time on what you love.”
+            </p>
+            <p className="font-semibold text-gray-900">— Nick, Founder of Upkept</p>
+          </div>
+        </section>
+
 {/* Pricing Section */}
 <section className="mt-12 max-w-6xl mx-auto px-4">
 
@@ -334,6 +346,56 @@ export default function Home() {
     Book a one-time visit and go from there.
   </a>
 </div>
+</section>
+
+{/* FAQ Section */}
+<section className="bg-white py-24 px-6 sm:px-12 lg:px-20">
+  <div className="max-w-4xl mx-auto text-center mb-12">
+    <h3 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
+    <p className="text-lg text-gray-700">Everything you need to know about Upkept’s service.</p>
+  </div>
+  <div className="max-w-4xl mx-auto divide-y divide-gray-200">
+    {[
+      {
+        question: "What exactly does Upkept do?",
+        answer:
+          "Upkept provides proactive home maintenance through scheduled visits, a dedicated technician, photo reports, and an easy-to-use dashboard for tracking tasks."
+      },
+      {
+        question: "How often will my handyman visit?",
+        answer:
+          "Depending on your plan, visits happen monthly or seasonally to keep your home in top condition."
+      },
+      {
+        question: "Can I approve tasks remotely?",
+        answer:
+          "Yes! After each visit, you’ll receive a photo report and can approve or defer tasks from your dashboard, by email, or text."
+      },
+      {
+        question: "Do you background-check technicians?",
+        answer:
+          "Absolutely. Every Upkept technician is employed by us full-time, fully vetted, and background checked."
+      }
+    ].map((item, idx) => (
+      <details key={idx} className="py-4 group cursor-pointer">
+        <summary className="flex justify-between items-center text-left text-gray-800 font-medium text-lg">
+          {item.question}
+          <span className="ml-4 transition-transform group-open:rotate-180">
+            <svg
+              className="w-5 h-5 text-gray-500"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p className="mt-3 text-gray-600 text-base">{item.answer}</p>
+      </details>
+    ))}
+  </div>
 </section>
 
         {/* Final CTA */}
