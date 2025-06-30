@@ -1,8 +1,22 @@
-export default function StepPlan({ currentValue, onNext, onSave }) {
-  const selected = currentValue.plan_type;
+import { useState } from 'react';
+import { supabase } from '../../lib/supabaseClient';
 
-  const handleSelect = (type) => {
-    onSave({ plan_type: type });
+export default function StepPlan({ home }) {
+  const [selected, setSelected] = useState(home?.plan_type || '');
+
+  const handleSelect = async (type) => {
+    setSelected(type);
+
+    const { error } = await supabase
+      .from('homes')
+      .update({ plan_type: type, onboarding_step: 'start_date' })
+      .eq('id', home.id);
+
+    if (!error) {
+      window.location.href = '/onboarding/StepStartDate';
+    } else {
+      console.error('Error updating plan_type:', error.message);
+    }
   };
 
   return (
@@ -25,13 +39,34 @@ export default function StepPlan({ currentValue, onNext, onSave }) {
           </button>
         ))}
       </div>
-
-      <button
-        onClick={onNext}
-        className="mt-6 w-full bg-blue-600 text-white py-2 rounded-md"
-      >
-        Continue
-      </button>
     </div>
   );
+}
+
+export async function getServerSideProps({ req, res }) {
+  const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+
+  if (sessionError || !session) {
+    console.error('No session:', sessionError?.message);
+    return {
+      redirect: { destination: '/login', permanent: false },
+    };
+  }
+
+  const { data: home, error } = await supabase
+    .from('homes')
+    .select('*')
+    .eq('user_id', session.user.id)
+    .single();
+
+  if (error || !home) {
+    console.error('Home fetch error:', error?.message);
+    return {
+      redirect: { destination: '/dashboard', permanent: false },
+    };
+  }
+
+  return {
+    props: { home },
+  };
 }
