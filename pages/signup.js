@@ -96,7 +96,6 @@ export default function SignUp() {
       {/* Left Side: Sign Up Form */}
       <div className="w-full md:w-1/2 flex flex-col justify-center px-8 sm:px-12 py-12">
         <div className="max-w-md w-full mx-auto">
-          <img src="/upkept-logo.svg" alt="Upkept logo" className="h-12 mb-8" />
           <h2 className="text-3xl font-bold mb-4">Create your Upkept account</h2>
           <p className="text-gray-600 mb-6">Choose your sign up method:</p>
 
@@ -138,6 +137,10 @@ export default function SignUp() {
               Sign up with Email
             </button>
           </form>
+
+          <p className="text-gray-500 text-sm mt-6 text-center">
+            You’ll get access to your personal dashboard to track visits, approve tasks, and more.
+          </p>
         </div>
       </div>
 
